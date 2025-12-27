@@ -14,33 +14,7 @@ Los parámetros del sistema, como la velocidad inicial, el coeficiente de resist
 * Desarrollo Matemático
 La fuerza neta que actúa sobre el cohete está dada por:
 
-\[
-\vec{F}_{net} = \vec{F}_g + \vec{F}_f = -mg\hat{j} - b|\vec{v}|\vec{v}
-\]
-
-La velocidad del sistema se expresa como:
-
-\[
-\vec{v} = \dot{x}\hat{i} + \dot{y}\hat{j}
-\]
-
-Aplicando la segunda ley de Newton se obtiene el sistema de ecuaciones diferenciales ordinarias de primer orden:
-
-\[
-\dot{x} = v_x
-\]
-
-\[
-\dot{v}_x = -B\sqrt{v_x^2 + v_y^2}v_x
-\]
-
-\[
-\dot{y} = v_y
-\]
-
-\[
-\dot{v}_y = -1 - B\sqrt{v_x^2 + v_y^2}v_y
-\]
+(desarrollo del taller)
 
 * Implementación en Python
 El proyecto se estructura en una carpeta principal denominada =cohete=, que contiene el archivo =main.py= y una carpeta =utils= donde se implementa la librería =projectile_functions.py=. En esta librería se define el sistema de ecuaciones diferenciales, mientras que el archivo principal se encarga de la entrada de parámetros, la resolución numérica y la visualización de resultados.
