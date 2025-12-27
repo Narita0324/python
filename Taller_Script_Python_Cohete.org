@@ -1,7 +1,7 @@
 #+TITLE: Taller Script Python – Simulación de Cohete
-#+AUTHOR: COLOQUE SU NOMBRE
-#+DATE: 2025-01-19
-#+OPTIONS: toc:t num:t
+#+AUTHOR: Samara Salazar
+#+DATE: 27-12-2025
+
 
 * Objetivos
 Desarrollar un script en Python utilizando el paradigma de programación estructurado para simular el lanzamiento de un cohete, considerando la resistencia del aire. El objetivo principal es resolver numéricamente un sistema de ecuaciones diferenciales ordinarias y analizar gráficamente el alcance del cohete para distintos ángulos de lanzamiento.
@@ -45,12 +45,11 @@ Aplicando la segunda ley de Newton se obtiene el sistema de ecuaciones diferenci
 * Implementación en Python
 El proyecto se estructura en una carpeta principal denominada =cohete=, que contiene el archivo =main.py= y una carpeta =utils= donde se implementa la librería =projectile_functions.py=. En esta librería se define el sistema de ecuaciones diferenciales, mientras que el archivo principal se encarga de la entrada de parámetros, la resolución numérica y la visualización de resultados.
 
-La resolución del sistema se realiza utilizando la función =solve_ivp= de la librería =scipy.integrate= y los resultados se representan gráficamente con =matplotlib=.
 
 * Resultados
 Se obtuvo la trayectoria del cohete para tres ángulos de lanzamiento distintos, evidenciándose el efecto de la resistencia del aire en la reducción del alcance horizontal y la pérdida de simetría de la trayectoria.
 
-[[file:trayectoria_cohete.png]]
+(Imagen de la trayectoria)
 
 * Descripción de Librerías Usadas
 
