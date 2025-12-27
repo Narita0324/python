@@ -1,0 +1,67 @@
+#+TITLE: Taller Script Python – Simulación de Cohete
+#+AUTHOR: COLOQUE SU NOMBRE
+#+DATE: 2025-01-19
+#+OPTIONS: toc:t num:t
+
+* Objetivos
+Desarrollar un script en Python utilizando el paradigma de programación estructurado para simular el lanzamiento de un cohete, considerando la resistencia del aire. El objetivo principal es resolver numéricamente un sistema de ecuaciones diferenciales ordinarias y analizar gráficamente el alcance del cohete para distintos ángulos de lanzamiento.
+
+* Problema
+Se analiza el movimiento de un cohete sometido a la acción de la gravedad y a una fuerza de resistencia del aire proporcional al cuadrado de la velocidad y de sentido opuesto al movimiento. Se requiere determinar gráficamente el alcance del cohete para al menos tres ángulos de lanzamiento distintos, considerando un tiempo máximo de vuelo.
+
+Los parámetros del sistema, como la velocidad inicial, el coeficiente de resistencia, el tiempo máximo de simulación y los ángulos de lanzamiento, se ingresan mediante la línea de comandos.
+
+* Desarrollo Matemático
+La fuerza neta que actúa sobre el cohete está dada por:
+
+\[
+\vec{F}_{net} = \vec{F}_g + \vec{F}_f = -mg\hat{j} - b|\vec{v}|\vec{v}
+\]
+
+La velocidad del sistema se expresa como:
+
+\[
+\vec{v} = \dot{x}\hat{i} + \dot{y}\hat{j}
+\]
+
+Aplicando la segunda ley de Newton se obtiene el sistema de ecuaciones diferenciales ordinarias de primer orden:
+
+\[
+\dot{x} = v_x
+\]
+
+\[
+\dot{v}_x = -B\sqrt{v_x^2 + v_y^2}v_x
+\]
+
+\[
+\dot{y} = v_y
+\]
+
+\[
+\dot{v}_y = -1 - B\sqrt{v_x^2 + v_y^2}v_y
+\]
+
+* Implementación en Python
+El proyecto se estructura en una carpeta principal denominada =cohete=, que contiene el archivo =main.py= y una carpeta =utils= donde se implementa la librería =projectile_functions.py=. En esta librería se define el sistema de ecuaciones diferenciales, mientras que el archivo principal se encarga de la entrada de parámetros, la resolución numérica y la visualización de resultados.
+
+La resolución del sistema se realiza utilizando la función =solve_ivp= de la librería =scipy.integrate= y los resultados se representan gráficamente con =matplotlib=.
+
+* Resultados
+Se obtuvo la trayectoria del cohete para tres ángulos de lanzamiento distintos, evidenciándose el efecto de la resistencia del aire en la reducción del alcance horizontal y la pérdida de simetría de la trayectoria.
+
+[[file:trayectoria_cohete.png]]
+
+* Descripción de Librerías Usadas
+
+** SOLVEIVP
+La función =solve_ivp= del módulo =scipy.integrate= permite resolver sistemas de ecuaciones diferenciales ordinarias mediante métodos numéricos, siendo especialmente útil para sistemas no lineales.
+
+** ARGPARSE
+La librería =argparse= permite gestionar argumentos desde la línea de comandos, facilitando el ingreso dinámico de parámetros sin modificar el código fuente.
+
+** NUMPY
+=Numpy= es una librería fundamental para el cálculo numérico en Python, proporcionando estructuras de datos eficientes y funciones matemáticas necesarias para la simulación.
+
+* Conclusiones
+El uso de métodos numéricos permite modelar sistemas físicos complejos como el lanzamiento de un cohete con resistencia del aire. La implementación estructurada en Python facilita la comprensión y reutilización del código desarrollado.
